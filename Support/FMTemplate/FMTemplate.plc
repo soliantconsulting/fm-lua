@@ -1,0 +1,138 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//  
+//  FMTemplate.plc - Minimum recommended Mac OS X resources for FileMaker plug-ins
+//
+//  Version 3.0, Copyright ©2002-2010 by 24U Software. All rights reserved.
+//
+//  Written by Tomas Zahradnicky & HOnza Koudelka
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//  The latest version of 24U Plug-In Template is available for download from:
+//
+//  http://www.24uSoftware.com/PlugInTemplate 
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//  24U Sample Code - Terms of use
+//
+//  Under the terms of the 24U Software License Agreement, 24U s.r.o. grants
+//  you a non-exclusive royalty-free Developer License (3.2) to use 24U Plug-In
+//  Template solely to compile plug-ins for use with FileMaker products.
+//
+//  Redistribution of 24U Sample Code in the source form, as part of
+//  an open-source plug-in project is permitted provided that the following
+//  conditions are met:
+//
+//  * Redistributions of source code must retain the copyright notice, the terms
+//    of use, and the "24U Software License Agreement" document.
+//
+//  * We require that you make it clear in the source wherever modified that the
+//    code was descended from 24U Sample Code, but that you've made changes.
+//
+//  See the "License.txt" and "24U Software License Agreement.pdf" files
+//  for detailed terms of use and licensing conditions.
+//
+////////////////////////////////////////////////////////////////////////
+
+//
+//  This source file was derived from FileMaker template plug-in provided
+//  by FileMaker, Inc. as a part of FileMaker Developer.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+//
+//  Add this file to the Mac OS X targets of your plug-in project.
+//  It will generate the bundle property list and the minimum set of resources
+//  recommended for FileMaker plug-ins on the Mac OS X. You should not need
+//  to modify this file as all the important constats are defined in the
+//  FMTConfig.h file.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+#include "FMTConfig.h"
+
+// The following string is your plug-in's bundle identifier string.
+#define kBundleIdentifier PLUGIN_BUNDLE_ID
+
+// The following string is your plug-in's short version string.
+#define kBundleShortVersion __OUTPUT_FILENAME__ " version " PLUGIN_VERSION
+
+// The following string will be displayed in the Finder's Get Info window.
+#define kBundleGetInfo kBundleShortVersion ", " COPY_STATEMENT
+
+/////////////////////////////////////////////////////////////////////////////
+//
+//  Plug-in's bundle property list
+//
+
+plist
+{
+    dictionary
+    {
+        key "CFBundleIdentifier" value string kBundleIdentifier
+        
+        key "CFBundleName" value string __OUTPUT_FILENAME__
+        key "CFBundleGetInfoString" value string kBundleGetInfo
+        key "CFBundleShortVersionString" value string kBundleShortVersion
+        
+        key "CFBundlePackageType" value string __OUTPUT_TYPE__
+        key "CFBundleSignature" value string __OUTPUT_CREATOR__
+        key "CFBundleVersion" value string PLUGIN_VERSION
+        
+        key "CFBundleDevelopmentRegion" value string "English"
+        key "CFBundleInfoDictionaryVersion" value string "6.0"
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////
+//
+//  Localizable Strings
+//
+
+localize "English" as "Localizable.strings"
+{
+    // Keys for the following strings are "String" & ID
+
+    comment "Plug-In name appearing in FM's preferences dialog"
+    key "String1" value string PLUGIN_NAME
+
+    comment "Options text appearing in FM's preferences dialog"
+    key "String2" value string PLUGIN_INFO
+
+    comment "Version"
+    key "String3" value string PLUGIN_VERSION
+    
+    comment "External functions prototypes go here"
+    #ifdef FUNCTION_1_PROTOTYPE
+      key "String101" value string FUNCTION_1_PROTOTYPE
+        #ifdef FUNCTION_2_PROTOTYPE
+          key "String102" value string FUNCTION_2_PROTOTYPE
+            #ifdef FUNCTION_3_PROTOTYPE
+              key "String103" value string FUNCTION_3_PROTOTYPE
+                #ifdef FUNCTION_4_PROTOTYPE
+                  key "String104" value string FUNCTION_4_PROTOTYPE
+                    #ifdef FUNCTION_5_PROTOTYPE
+                      key "String105" value string FUNCTION_5_PROTOTYPE
+                        #ifdef FUNCTION_6_PROTOTYPE
+                          key "String106" value string FUNCTION_6_PROTOTYPE
+                            #ifdef FUNCTION_7_PROTOTYPE
+                              key "String107" value string FUNCTION_7_PROTOTYPE
+                                #ifdef FUNCTION_8_PROTOTYPE
+                                  key "String108" value string FUNCTION_8_PROTOTYPE
+                                    #ifdef FUNCTION_9_PROTOTYPE
+                                      key "String109" value string FUNCTION_9_PROTOTYPE
+                                        #ifdef FUNCTION_10_PROTOTYPE
+                                          key "String110" value string FUNCTION_10_PROTOTYPE
+                                        #endif //FUNCTION_10_PROTOTYPE
+                                    #endif //FUNCTION_9_PROTOTYPE
+                                #endif //FUNCTION_8_PROTOTYPE
+                            #endif //FUNCTION_7_PROTOTYPE
+                        #endif //FUNCTION_6_PROTOTYPE
+                    #endif //FUNCTION_5_PROTOTYPE
+                #endif //FUNCTION_4_PROTOTYPE
+            #endif //FUNCTION_3_PROTOTYPE
+        #endif //FUNCTION_2_PROTOTYPE
+    #endif //FUNCTION_1_PROTOTYPE
+}

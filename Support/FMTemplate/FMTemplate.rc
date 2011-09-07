@@ -1,0 +1,136 @@
+//////////////////////////////////////////////////////////////////////////////////////
+//  
+//  FMTemplate.rc - Minimum recommended Windows resources for FileMaker plug-ins
+//
+//  Version 3.0, Copyright ©2002-2010 by 24U Software. All rights reserved.
+//
+//  Written by Tomas Zahradnicky & HOnza Koudelka
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//  The latest version of 24U Plug-In Template is available for download from:
+//
+//  http://www.24uSoftware.com/PlugInTemplate 
+//
+////////////////////////////////////////////////////////////////////////////////
+//
+//  24U Sample Code - Terms of use
+//
+//  Under the terms of the 24U Software License Agreement, 24U s.r.o. grants
+//  you a non-exclusive royalty-free Developer License (3.2) to use 24U Plug-In
+//  Template solely to compile plug-ins for use with FileMaker products.
+//
+//  Redistribution of 24U Sample Code in the source form, as part of
+//  an open-source plug-in project is permitted provided that the following
+//  conditions are met:
+//
+//  * Redistributions of source code must retain the copyright notice, the terms
+//    of use, and the "24U Software License Agreement" document.
+//
+//  * We require that you make it clear in the source wherever modified that the
+//    code was descended from 24U Sample Code, but that you've made changes.
+//
+//  See the "License.txt" and "24U Software License Agreement.pdf" files
+//  for detailed terms of use and licensing conditions.
+//
+////////////////////////////////////////////////////////////////////////
+
+//
+//  Add this file to the Windows targets of your plug-in project.
+//  It will generate the minimum set of resources recommended for FileMaker
+//  plug-ins on Windows. You should not need to modify this file as all the
+//  important constats are defined in the FMTConfig.h file. If you need to add
+//  more Windows resources to your plug-in, define them in the file "FMPlugin.rc"
+//  located in the "Sources" directory.
+//
+////////////////////////////////////////////////////////////////////////////////
+
+
+#include "FMTConfig.h"
+
+#include "FMPlugin.rc"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+//  Version
+//
+
+1 VERSIONINFO
+
+ FILEVERSION (PLUGIN_VERSION_MAJOR),(PLUGIN_VERSION_MINOR),(PLUGIN_VERSION_BUILD),0
+ FILEFLAGSMASK 0x3fL
+ FILEFLAGS 0x00L
+ FILEOS 0x04L           // VOS_WINDOWS32
+ FILETYPE 0x01L         // VFT_APP
+ FILESUBTYPE 0x00L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "FileVersion", PLUGIN_VERSION
+            VALUE "FileDescription", PLUGIN_NAME " " PLUGIN_VERSION
+            VALUE "LegalCopyright", COPY_STATEMENT
+            VALUE "CompanyName", COMPANY_NAME
+            VALUE "Company URL", COMPANY_URL
+            VALUE "InternalName", PLUGIN_NAME
+            VALUE "More Info", PLUGIN_INFO_PC
+            VALUE "OriginalFilename", FILE_NAME_PC
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+//  Localizable Strings
+//
+
+// English (U.S.) resources
+LANGUAGE 9, 1
+#pragma code_page(1252) // ASCII latin 1
+
+STRINGTABLE 
+BEGIN
+    // 1..
+    PLUGIN_NAME_ID          PLUGIN_NAME
+    PLUGIN_PREFERENCES_ID   PLUGIN_INFO
+    PLUGIN_VERSION_ID       PLUGIN_VERSION
+    
+    // 101..
+    #ifdef FUNCTION_1_PROTOTYPE
+      FUNCTION_OFFSET + 1   FUNCTION_1_PROTOTYPE
+        #ifdef FUNCTION_2_PROTOTYPE
+          FUNCTION_OFFSET + 2   FUNCTION_2_PROTOTYPE
+            #ifdef FUNCTION_3_PROTOTYPE
+              FUNCTION_OFFSET + 3   FUNCTION_3_PROTOTYPE
+                #ifdef FUNCTION_4_PROTOTYPE
+                  FUNCTION_OFFSET + 4   FUNCTION_4_PROTOTYPE
+                    #ifdef FUNCTION_5_PROTOTYPE
+                      FUNCTION_OFFSET + 5   FUNCTION_5_PROTOTYPE
+                        #ifdef FUNCTION_6_PROTOTYPE
+                          FUNCTION_OFFSET + 6   FUNCTION_6_PROTOTYPE
+                            #ifdef FUNCTION_7_PROTOTYPE
+                              FUNCTION_OFFSET + 7   FUNCTION_7_PROTOTYPE
+                                #ifdef FUNCTION_8_PROTOTYPE
+                                  FUNCTION_OFFSET + 8   FUNCTION_8_PROTOTYPE
+                                    #ifdef FUNCTION_9_PROTOTYPE
+                                      FUNCTION_OFFSET + 9   FUNCTION_9_PROTOTYPE
+                                        #ifdef FUNCTION_10_PROTOTYPE
+                                          FUNCTION_OFFSET + 10   FUNCTION_10_PROTOTYPE
+                                        #endif //FUNCTION_10_PROTOTYPE
+                                    #endif //FUNCTION_9_PROTOTYPE
+                                #endif //FUNCTION_8_PROTOTYPE
+                            #endif //FUNCTION_7_PROTOTYPE
+                        #endif //FUNCTION_6_PROTOTYPE
+                    #endif //FUNCTION_5_PROTOTYPE
+                #endif //FUNCTION_4_PROTOTYPE
+            #endif //FUNCTION_3_PROTOTYPE
+        #endif //FUNCTION_2_PROTOTYPE
+    #endif //FUNCTION_1_PROTOTYPE
+END

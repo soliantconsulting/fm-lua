@@ -1,0 +1,480 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10A23C8B1416F92B008F6047 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 10A23C8A1416F92B008F6047 /* liblua.a */; };
+		10A23C8D1416F966008F6047 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 10A23C8C1416F966008F6047 /* lua.h */; };
+		10A23C8F1416FA5E008F6047 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 10A23C8E1416FA5E008F6047 /* lauxlib.h */; };
+		10A23C911416FA7F008F6047 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 10A23C901416FA7F008F6047 /* lualib.h */; };
+		821E31AB078E906A004B645E /* FMTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821E3188078E9069004B645E /* FMTemplate.cpp */; };
+		821E31AC078E906A004B645E /* FMTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3187078E9069004B645E /* FMTemplate.h */; };
+		821E31B0078E906A004B645E /* FMXCalcEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E317D078E9069004B645E /* FMXCalcEngine.h */; };
+		821E31B1078E906A004B645E /* FMXBinaryData.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E317C078E9069004B645E /* FMXBinaryData.h */; };
+		821E31B2078E906A004B645E /* FMXDateTime.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3180078E9069004B645E /* FMXDateTime.h */; };
+		821E31B3078E906A004B645E /* FMXData.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E317F078E9069004B645E /* FMXData.h */; };
+		821E31B4078E906A004B645E /* FMXClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E317E078E9069004B645E /* FMXClient.h */; };
+		821E31B5078E906A004B645E /* FMXTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3185078E9069004B645E /* FMXTypes.h */; };
+		821E31B6078E906A004B645E /* FMXTextStyle.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3184078E9069004B645E /* FMXTextStyle.h */; };
+		821E31B7078E906A004B645E /* FMXText.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3183078E9069004B645E /* FMXText.h */; };
+		821E31B8078E906A004B645E /* FMXFixPt.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3182078E9069004B645E /* FMXFixPt.h */; };
+		821E31B9078E906A004B645E /* FMXExtern.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3181078E9069004B645E /* FMXExtern.h */; };
+		821E31BC078E906A004B645E /* FMUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E318A078E9069004B645E /* FMUtils.h */; };
+		821E31BD078E906A004B645E /* FMUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821E318B078E9069004B645E /* FMUtils.cpp */; };
+		821E31BE078E906A004B645E /* FMPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3176078E9069004B645E /* FMPlugin.h */; };
+		821E31BF078E906A004B645E /* FMPluginHandlers.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821E3177078E9069004B645E /* FMPluginHandlers.cpp */; };
+		821E31C0078E906A004B645E /* FMPluginVersion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821E3178078E9069004B645E /* FMPluginVersion.cpp */; };
+		821E31C6078E906C004B645E /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 821E31C4078E906C004B645E /* Carbon.framework */; };
+		8268A928078E96A3008CA7C1 /* FMWrapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8268A926078E96A3008CA7C1 /* FMWrapper.framework */; };
+		82E58B840795DF7900592B32 /* FMTConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 82E58B830795DF7900592B32 /* FMTConfig.h */; };
+		B9BD41710A400925005A4D9D /* FMTemplatePrefix.h in Headers */ = {isa = PBXBuildFile; fileRef = B9BD41700A400925005A4D9D /* FMTemplatePrefix.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		10A23C8A1416F92B008F6047 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = "../../Sources/lua-5.1.4/liblua.a"; sourceTree = "<group>"; };
+		10A23C8C1416F966008F6047 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "../../Sources/lua-5.1.4/lua.h"; sourceTree = "<group>"; };
+		10A23C8E1416FA5E008F6047 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = "../../../../../../Downloads/lua-5.1.4/src/lauxlib.h"; sourceTree = "<group>"; };
+		10A23C901416FA7F008F6047 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "../../Sources/lua-5.1.4/lualib.h"; sourceTree = "<group>"; };
+		821E3176078E9069004B645E /* FMPlugin.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMPlugin.h; path = ../../Sources/FMPlugin.h; sourceTree = SOURCE_ROOT; };
+		821E3177078E9069004B645E /* FMPluginHandlers.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMPluginHandlers.cpp; path = ../../Sources/FMPluginHandlers.cpp; sourceTree = SOURCE_ROOT; };
+		821E3178078E9069004B645E /* FMPluginVersion.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMPluginVersion.cpp; path = ../../Sources/FMPluginVersion.cpp; sourceTree = SOURCE_ROOT; };
+		821E317C078E9069004B645E /* FMXBinaryData.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXBinaryData.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXBinaryData.h; sourceTree = SOURCE_ROOT; };
+		821E317D078E9069004B645E /* FMXCalcEngine.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXCalcEngine.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXCalcEngine.h; sourceTree = SOURCE_ROOT; };
+		821E317E078E9069004B645E /* FMXClient.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXClient.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXClient.h; sourceTree = SOURCE_ROOT; };
+		821E317F078E9069004B645E /* FMXData.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXData.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXData.h; sourceTree = SOURCE_ROOT; };
+		821E3180078E9069004B645E /* FMXDateTime.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXDateTime.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXDateTime.h; sourceTree = SOURCE_ROOT; };
+		821E3181078E9069004B645E /* FMXExtern.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXExtern.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXExtern.h; sourceTree = SOURCE_ROOT; };
+		821E3182078E9069004B645E /* FMXFixPt.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXFixPt.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXFixPt.h; sourceTree = SOURCE_ROOT; };
+		821E3183078E9069004B645E /* FMXText.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXText.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXText.h; sourceTree = SOURCE_ROOT; };
+		821E3184078E9069004B645E /* FMXTextStyle.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXTextStyle.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXTextStyle.h; sourceTree = SOURCE_ROOT; };
+		821E3185078E9069004B645E /* FMXTypes.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMXTypes.h; path = ../../Support/FMPlugInSDK/Headers/FMWrapper/FMXTypes.h; sourceTree = SOURCE_ROOT; };
+		821E3187078E9069004B645E /* FMTemplate.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMTemplate.h; path = ../../Support/FMTemplate/FMTemplate.h; sourceTree = SOURCE_ROOT; };
+		821E3188078E9069004B645E /* FMTemplate.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMTemplate.cpp; path = ../../Support/FMTemplate/FMTemplate.cpp; sourceTree = SOURCE_ROOT; };
+		821E318A078E9069004B645E /* FMUtils.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMUtils.h; path = ../../Support/FMTemplate/FMUtils.h; sourceTree = SOURCE_ROOT; };
+		821E318B078E9069004B645E /* FMUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMUtils.cpp; path = ../../Support/FMTemplate/FMUtils.cpp; sourceTree = SOURCE_ROOT; };
+		821E31C4078E906C004B645E /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
+		8268659E0797E91A006EAC37 /* infoplist.template */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.xml; path = infoplist.template; sourceTree = "<group>"; };
+		8268659F0797E91A006EAC37 /* localizablestrings.template */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text; path = localizablestrings.template; sourceTree = "<group>"; };
+		826865A00797E91A006EAC37 /* 24u_plist_compiler.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = 24u_plist_compiler.sh; sourceTree = "<group>"; };
+		826865A10797E91A006EAC37 /* myplc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = myplc.c; sourceTree = "<group>"; };
+		8268A926078E96A3008CA7C1 /* FMWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMWrapper.framework; path = ../../Support/FMPlugInSDK/Libraries/FMWrapper.framework; sourceTree = SOURCE_ROOT; };
+		82D72FDF07BE25630063F5A9 /* FMPluginDebug.fmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FMPluginDebug.fmplugin; sourceTree = BUILT_PRODUCTS_DIR; };
+		82E58B830795DF7900592B32 /* FMTConfig.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMTConfig.h; path = ../../Sources/FMTConfig.h; sourceTree = SOURCE_ROOT; };
+		B9BD41700A400925005A4D9D /* FMTemplatePrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMTemplatePrefix.h; path = ../../Support/FMTemplate/FMTemplatePrefix.h; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		821E3170078E9069004B645E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				821E31C6078E906C004B645E /* Carbon.framework in Frameworks */,
+				8268A928078E96A3008CA7C1 /* FMWrapper.framework in Frameworks */,
+				10A23C8B1416F92B008F6047 /* liblua.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		821E3161078E9068004B645E = {
+			isa = PBXGroup;
+			children = (
+				821E3174078E9069004B645E /* Sources */,
+				821E3179078E9069004B645E /* Resources */,
+				821E317A078E9069004B645E /* Support */,
+				821E318C078E9069004B645E /* Libraries */,
+				821E31C3078E906C004B645E /* Frameworks */,
+				82D72FDF07BE25630063F5A9 /* FMPluginDebug.fmplugin */,
+			);
+			sourceTree = "<group>";
+		};
+		821E3174078E9069004B645E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				821E3176078E9069004B645E /* FMPlugin.h */,
+				82E58B830795DF7900592B32 /* FMTConfig.h */,
+				821E3177078E9069004B645E /* FMPluginHandlers.cpp */,
+				821E3178078E9069004B645E /* FMPluginVersion.cpp */,
+			);
+			name = Sources;
+			sourceTree = "<group>";
+		};
+		821E3179078E9069004B645E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		821E317A078E9069004B645E /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				8268659D0797E91A006EAC37 /* XCode */,
+				821E317B078E9069004B645E /* FMPlugInSDK */,
+				821E3186078E9069004B645E /* FMTemplate */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		821E317B078E9069004B645E /* FMPlugInSDK */ = {
+			isa = PBXGroup;
+			children = (
+				821E317C078E9069004B645E /* FMXBinaryData.h */,
+				821E317D078E9069004B645E /* FMXCalcEngine.h */,
+				821E317E078E9069004B645E /* FMXClient.h */,
+				821E317F078E9069004B645E /* FMXData.h */,
+				821E3180078E9069004B645E /* FMXDateTime.h */,
+				821E3181078E9069004B645E /* FMXExtern.h */,
+				821E3182078E9069004B645E /* FMXFixPt.h */,
+				821E3183078E9069004B645E /* FMXText.h */,
+				821E3184078E9069004B645E /* FMXTextStyle.h */,
+				821E3185078E9069004B645E /* FMXTypes.h */,
+			);
+			name = FMPlugInSDK;
+			sourceTree = "<group>";
+		};
+		821E3186078E9069004B645E /* FMTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				821E3187078E9069004B645E /* FMTemplate.h */,
+				821E3188078E9069004B645E /* FMTemplate.cpp */,
+				821E318A078E9069004B645E /* FMUtils.h */,
+				821E318B078E9069004B645E /* FMUtils.cpp */,
+				B9BD41700A400925005A4D9D /* FMTemplatePrefix.h */,
+			);
+			name = FMTemplate;
+			sourceTree = "<group>";
+		};
+		821E318C078E9069004B645E /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
+			sourceTree = "<group>";
+		};
+		821E31C3078E906C004B645E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				10A23C901416FA7F008F6047 /* lualib.h */,
+				10A23C8E1416FA5E008F6047 /* lauxlib.h */,
+				10A23C8C1416F966008F6047 /* lua.h */,
+				10A23C8A1416F92B008F6047 /* liblua.a */,
+				8268A926078E96A3008CA7C1 /* FMWrapper.framework */,
+				821E31C4078E906C004B645E /* Carbon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8268659D0797E91A006EAC37 /* XCode */ = {
+			isa = PBXGroup;
+			children = (
+				8268659E0797E91A006EAC37 /* infoplist.template */,
+				8268659F0797E91A006EAC37 /* localizablestrings.template */,
+				826865A00797E91A006EAC37 /* 24u_plist_compiler.sh */,
+				826865A10797E91A006EAC37 /* myplc.c */,
+			);
+			name = XCode;
+			path = ../../Support/XCode;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		821E316D078E9069004B645E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				821E31AC078E906A004B645E /* FMTemplate.h in Headers */,
+				821E31B0078E906A004B645E /* FMXCalcEngine.h in Headers */,
+				821E31B1078E906A004B645E /* FMXBinaryData.h in Headers */,
+				821E31B2078E906A004B645E /* FMXDateTime.h in Headers */,
+				821E31B3078E906A004B645E /* FMXData.h in Headers */,
+				821E31B4078E906A004B645E /* FMXClient.h in Headers */,
+				821E31B5078E906A004B645E /* FMXTypes.h in Headers */,
+				821E31B6078E906A004B645E /* FMXTextStyle.h in Headers */,
+				821E31B7078E906A004B645E /* FMXText.h in Headers */,
+				821E31B8078E906A004B645E /* FMXFixPt.h in Headers */,
+				821E31B9078E906A004B645E /* FMXExtern.h in Headers */,
+				821E31BC078E906A004B645E /* FMUtils.h in Headers */,
+				821E31BE078E906A004B645E /* FMPlugin.h in Headers */,
+				82E58B840795DF7900592B32 /* FMTConfig.h in Headers */,
+				B9BD41710A400925005A4D9D /* FMTemplatePrefix.h in Headers */,
+				10A23C8D1416F966008F6047 /* lua.h in Headers */,
+				10A23C8F1416FA5E008F6047 /* lauxlib.h in Headers */,
+				10A23C911416FA7F008F6047 /* lualib.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		821E3172078E9069004B645E /* FMPlugin Mac OS X */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B9CC614C0A3F262D007E1972 /* Build configuration list for PBXNativeTarget "FMPlugin Mac OS X" */;
+			buildPhases = (
+				821E316D078E9069004B645E /* Headers */,
+				821E316E078E9069004B645E /* Sources */,
+				821E316F078E9069004B645E /* Resources */,
+				821E3170078E9069004B645E /* Frameworks */,
+				821E3171078E9069004B645E /* Rez */,
+				821D6C120790416A00D2EE80 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FMPlugin Mac OS X";
+			productName = "FMPlugin Mac OS X Release";
+			productReference = 82D72FDF07BE25630063F5A9 /* FMPluginDebug.fmplugin */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		821E31C7078E906C004B645E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0410;
+			};
+			buildConfigurationList = B9CC61500A3F262E007E1972 /* Build configuration list for PBXProject "PlugInTemplate" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 821E3161078E9068004B645E;
+			productRefGroup = 821E3161078E9068004B645E;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				821E3172078E9069004B645E /* FMPlugin Mac OS X */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		821E316F078E9069004B645E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		821E3171078E9069004B645E /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		821D6C120790416A00D2EE80 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				$BUILD_DIR/$EXECUTABLE_PATH,
+				../../Support/XCode/localizablestrings.template,
+				../../Support/XCode/infoplist.template,
+				../../Support/XCode/myplc.c,
+				../../Support/XCode/24u_plist_compiler.sh,
+			);
+			outputPaths = (
+				$BUILD_DIR/$INFOPLIST_PATH,
+				$BUILD_DIR/$UNLOCALIZED_RESOURCES_FOLDER_PATH/English.lproj/Localizable.strings,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PROJECT_DIR=`pwd`\nexport XCODE_SUPPORT_DIR=\"$PROJECT_DIR/../../Support/XCode\"\n\ngcc -E -P  -I\"$PROJECT_DIR/../../Sources\"   \"$XCODE_SUPPORT_DIR/myplc.c\" | grep my_ |\"$XCODE_SUPPORT_DIR/24u_plist_compiler.sh\"\n\n# Create the file Pckginfo\necho \"BNDL????\" > \"$BUILD_DIR/$PKGINFO_PATH\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		821E316E078E9069004B645E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				821E31AB078E906A004B645E /* FMTemplate.cpp in Sources */,
+				821E31BD078E906A004B645E /* FMUtils.cpp in Sources */,
+				821E31BF078E906A004B645E /* FMPluginHandlers.cpp in Sources */,
+				821E31C0078E906A004B645E /* FMPluginVersion.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B9CC614D0A3F262D007E1972 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = NO;
+				DEPLOYMENT_LOCATION = NO;
+				FRAMEWORK_SEARCH_PATHS = ../../Support/FMPlugInSDK/Libraries;
+				GCC_ALTIVEC_EXTENSIONS = NO;
+				GCC_CHAR_IS_UNSIGNED_CHAR = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_DEBUGGING_SYMBOLS = default;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_ENABLE_PASCAL_STRINGS = NO;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/../../Support/FMTemplate/FMTemplatePrefix.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "FMPLUGIN_DEBUG=1";
+				GCC_REUSE_STRINGS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				GENERATE_PKGINFO_FILE = NO;
+				HEADER_SEARCH_PATHS = ../../Support;
+				INFOPLIST_FILE = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Sources/lua-5.1.4\"",
+				);
+				OTHER_CFLAGS = (
+					"-fno-inline",
+					"-fno-inline-functions",
+					"-fno-constant-cfstrings",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = FMPluginDebug;
+				REZ_SCRIPT_TYPE = Roman;
+				REZ_SUPPRESS_REDECLARED_RESOURCE_TYPE_WARNINGS = NO;
+				SDKROOT = macosx10.6;
+				SECTORDER_FLAGS = "";
+				UNSTRIPPED_PRODUCT = YES;
+				VALID_ARCHS = i386;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = fmplugin;
+				ZERO_LINK = YES;
+			};
+			name = Development;
+		};
+		B9CC614E0A3F262D007E1972 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				COPY_PHASE_STRIP = YES;
+				DEPLOYMENT_LOCATION = NO;
+				FRAMEWORK_SEARCH_PATHS = ../../Support/FMPlugInSDK/Libraries;
+				GCC_ALTIVEC_EXTENSIONS = NO;
+				GCC_CHAR_IS_UNSIGNED_CHAR = NO;
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_CPP_RTTI = YES;
+				GCC_GENERATE_DEBUGGING_SYMBOLS = NO;
+				GCC_OPTIMIZATION_LEVEL = 3;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/../../Support/FMTemplate/FMTemplatePrefix.h";
+				GCC_PREPROCESSOR_DEFINITIONS = "FMPLUGIN_DEBUG=0";
+				GCC_REUSE_STRINGS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_HIDDEN_VIRTUAL_FUNCTIONS = YES;
+				GCC_WARN_PEDANTIC = NO;
+				GCC_WARN_SHADOW = NO;
+				GCC_WARN_UNKNOWN_PRAGMAS = YES;
+				GCC_WARN_UNUSED_PARAMETER = NO;
+				GCC_WARN_UNUSED_VARIABLE = NO;
+				GENERATE_PKGINFO_FILE = NO;
+				HEADER_SEARCH_PATHS = ../../Support;
+				INFOPLIST_FILE = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../../Sources/lua-5.1.4\"",
+				);
+				OTHER_CFLAGS = (
+					"-fno-inline",
+					"-fno-inline-functions",
+					"-fno-constant-cfstrings",
+				);
+				OTHER_LDFLAGS = "";
+				OTHER_REZFLAGS = "";
+				PRODUCT_NAME = FMPlugin;
+				REZ_SCRIPT_TYPE = Roman;
+				REZ_SUPPRESS_REDECLARED_RESOURCE_TYPE_WARNINGS = NO;
+				SDKROOT = macosx10.6;
+				SECTORDER_FLAGS = "";
+				VALID_ARCHS = i386;
+				WARNING_CFLAGS = (
+					"-Wmost",
+					"-Wno-four-char-constants",
+					"-Wno-unknown-pragmas",
+				);
+				WRAPPER_EXTENSION = fmplugin;
+				ZERO_LINK = NO;
+			};
+			name = Deployment;
+		};
+		B9CC61510A3F262E007E1972 /* Development */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = ../../Output;
+				GCC_PREFIX_HEADER = /Developer/SDks/MacOSX10.4.sdk/Developer/Headers/FlatCarbon/Carbon.h;
+				OBJROOT = ../../Temp;
+				SDKROOT = macosx10.6;
+				SYMROOT = ../../Output;
+				VALID_ARCHS = i386;
+			};
+			name = Development;
+		};
+		B9CC61520A3F262E007E1972 /* Deployment */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CONFIGURATION_BUILD_DIR = ../../Output;
+				OBJROOT = ../../Temp;
+				SDKROOT = macosx10.6;
+				SYMROOT = ../../Output;
+				VALID_ARCHS = i386;
+			};
+			name = Deployment;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B9CC614C0A3F262D007E1972 /* Build configuration list for PBXNativeTarget "FMPlugin Mac OS X" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9CC614D0A3F262D007E1972 /* Development */,
+				B9CC614E0A3F262D007E1972 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+		B9CC61500A3F262E007E1972 /* Build configuration list for PBXProject "PlugInTemplate" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B9CC61510A3F262E007E1972 /* Development */,
+				B9CC61520A3F262E007E1972 /* Deployment */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Development;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 821E31C7078E906C004B645E /* Project object */;
+}

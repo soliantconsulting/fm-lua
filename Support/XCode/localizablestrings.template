@@ -1,0 +1,7 @@
+/* Plug-In name appearing in FM's preferences dialog */
+String1 = "kPluginName";
+/* Options text appearing in FM's preferences dialog */
+String2 = "kPluginInfo";
+/* Version */
+String3 = "kBundleVersion";
+/* External functions prototypes go here */

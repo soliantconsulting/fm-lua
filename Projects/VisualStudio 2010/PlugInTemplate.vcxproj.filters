@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Documentation">
+      <UniqueIdentifier>{9dc0cb3a-1f1c-4eff-82d3-8ae5d1821a57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Libraries">
+      <UniqueIdentifier>{a29975bf-8654-4332-9c16-1a48dde849d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{1fa3b414-2923-4dc2-8279-9ce4a2597af5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Support">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Support\FMPlugInSDK">
+      <UniqueIdentifier>{126a5f84-061e-4754-8db0-2db375c80398}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Support\FMTemplate">
+      <UniqueIdentifier>{7c8b0cae-6ce0-46dd-92a1-4aa694691d60}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Support\VisualStudio">
+      <UniqueIdentifier>{3f064b79-8817-4abc-9267-c07d2f863337}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Sources\FMPlugin.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\FMTConfig.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXBinaryData.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXCalcEngine.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXClient.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXData.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXDateTime.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXExtern.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXFixPt.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXText.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXTextStyle.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXTypes.h">
+      <Filter>Support\FMPlugInSDK</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMTemplate\FMTemplate.h">
+      <Filter>Support\FMTemplate</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Support\FMTemplate\FMUtils.h">
+      <Filter>Support\FMTemplate</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Sources\FMPluginHandlers.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\FMPluginVersion.cpp">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Support\FMTemplate\FMTemplate.cpp">
+      <Filter>Support\FMTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Support\FMTemplate\FMUtils.cpp">
+      <Filter>Support\FMTemplate</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Support\VisualStudio\FMPluginDllEntryPoint.cpp">
+      <Filter>Support\VisualStudio</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="..\..\Sources\FMPlugin.rc">
+      <Filter>Resources</Filter>
+    </ResourceCompile>
+    <ResourceCompile Include="..\..\Support\FMTemplate\FMTemplate.rc">
+      <Filter>Support\FMTemplate</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="..\..\Support\FMPlugInSDK\Libraries\FMWrapper.lib">
+      <Filter>Libraries</Filter>
+    </Library>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\Documentation\License.txt">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="..\..\Documentation\ReadMe.txt">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="..\..\Documentation\ReleaseNotes.txt">
+      <Filter>Documentation</Filter>
+    </None>
+    <None Include="..\..\Documentation\Tutorial.txt">
+      <Filter>Documentation</Filter>
+    </None>
+  </ItemGroup>
+</Project>

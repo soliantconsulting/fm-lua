@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist SYSTEM "file://localhost/System/Library/DTDs/PropertyList.dtd">
+<plist version="0.9">
+<dict>
+	<key>CFBundleIdentifier</key>
+	<string>kBundleIdentifier</string>
+	<key>CFBundleName</key>
+	<string>kBundleName</string>
+	<key>CFBundleGetInfoString</key>
+	<string>kBundleGetInfo</string>
+	<key>CFBundleShortVersionString</key>
+	<string>kBundleShortVersion</string>
+	<key>CFBundlePackageType</key>
+	<string>BNDL</string>
+	<key>CFBundleSignature</key>
+	<string>kPluginIdString</string>
+	<key>CFBundleVersion</key>
+	<string>kBundleVersion</string>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>English</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+</dict>
+</plist>
+
