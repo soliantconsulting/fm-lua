@@ -1,0 +1,1 @@
+This is part of the loop project.  It's used to compile lua files into c so we can include it in the lib.

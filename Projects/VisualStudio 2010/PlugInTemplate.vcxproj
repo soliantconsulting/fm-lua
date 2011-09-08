@@ -74,6 +74,7 @@
       <SubSystem>Windows</SubSystem>
       <ImportLibrary>$(IntDir)FMPluginDebug.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>kernel32.lib;user32.lib;wsock32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <PreprocessorDefinitions>_MSC_VER=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -100,7 +101,7 @@
       <ForcedIncludeFiles>$(ProjectDir)..\..\Support\VisualStudio\stdafx.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
     </ClCompile>
     <Link>
-      <OutputFile>$(OutDir)FMPlugin.fmx</OutputFile>
+      <OutputFile>$(OutDir)fm-lua.fmx</OutputFile>
       <Version>2.0</Version>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -112,6 +113,7 @@
       <SetChecksum>false</SetChecksum>
       <ImportLibrary>$(IntDir)FMPlugin.lib</ImportLibrary>
       <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalDependencies>kernel32.lib;user32.lib;wsock32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;odbc32.lib;odbccp32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <ResourceCompile>
       <PreprocessorDefinitions>_MSC_VER=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>

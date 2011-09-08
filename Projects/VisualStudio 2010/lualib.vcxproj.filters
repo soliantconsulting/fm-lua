@@ -137,6 +137,24 @@
     <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\wsocket.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\fullluasocket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\luasocketscripts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\fullluamime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\mimescripts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\fulllualtn12.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\lualtn12scripts.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\lua-5.1.4\lapi.h">
@@ -254,6 +272,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\wsocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\fullluasocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\luasocketscripts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\fullluamime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\mimescripts.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\fulllualtn12.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\lualtn12scripts.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
