@@ -98,6 +98,45 @@
     <ClCompile Include="..\..\Sources\lua-5.1.4\lzio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\auxiliar.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\buffer.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\except.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\inet.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\io.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\luasocket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\mime.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\options.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\select.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\tcp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\timeout.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\udp.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\lua-5.1.4\luasocket\wsocket.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\lua-5.1.4\lapi.h">
@@ -167,6 +206,54 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Sources\lua-5.1.4\lzio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\auxiliar.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\buffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\except.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\inet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\io.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\luasocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\mime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\options.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\select.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\socket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\tcp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\timeout.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\udp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\unix.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\usocket.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\lua-5.1.4\luasocket\wsocket.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

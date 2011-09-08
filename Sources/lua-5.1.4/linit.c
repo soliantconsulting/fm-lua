@@ -13,6 +13,8 @@
 #include "lualib.h"
 #include "lauxlib.h"
 
+#include "luasocket/luasocket.h"
+#include "luasocket/mime.h"
 
 static const luaL_Reg lualibs[] = {
   {"", luaopen_base},
@@ -23,6 +25,8 @@ static const luaL_Reg lualibs[] = {
   {LUA_STRLIBNAME, luaopen_string},
   {LUA_MATHLIBNAME, luaopen_math},
   {LUA_DBLIBNAME, luaopen_debug},
+  {"socket", luaopen_socket_core},
+  {"mime", luaopen_mime_core},
   {NULL, NULL}
 };
 
