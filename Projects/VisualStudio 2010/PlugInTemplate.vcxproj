@@ -50,7 +50,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Sources;$(ProjectDir)..\..\Support;$(ProjectDir)..\..\Support\FMPlugInSDK\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Sources;$(ProjectDir)..\..\Support;$(ProjectDir)..\..\Support\FMPlugInSDK\Headers;%(AdditionalIncludeDirectories);$(ProjectDir)..\..\Sources\lua-5.1.4</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FMTEMPLATE21_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -80,7 +80,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Sources;$(ProjectDir)..\..\Support;$(ProjectDir)..\..\Support\FMPlugInSDK\Headers;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\..\Sources;$(ProjectDir)..\..\Support;$(ProjectDir)..\..\Support\FMPlugInSDK\Headers;%(AdditionalIncludeDirectories);$(ProjectDir)..\..\Sources\lua-5.1.4</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FMTEMPLATE20_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <StructMemberAlignment>8Bytes</StructMemberAlignment>
