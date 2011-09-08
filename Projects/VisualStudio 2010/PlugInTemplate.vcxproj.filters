@@ -101,6 +101,9 @@
     <Library Include="..\..\Support\FMPlugInSDK\Libraries\FMWrapper.lib">
       <Filter>Libraries</Filter>
     </Library>
+    <Library Include="..\..\Output\lua.lib">
+      <Filter>Libraries</Filter>
+    </Library>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\Documentation\License.txt">
