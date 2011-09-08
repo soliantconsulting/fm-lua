@@ -64,20 +64,20 @@
 //  contants up to contain accurate information about your plug-in.
 //
 
-#define PLUGIN_ID_STRING        "24FT"
+#define PLUGIN_ID_STRING        "fmlua"
 
-#define PLUGIN_NAME             "My Plug-In"
-#define PLUGIN_VERSION          "1.0"
+#define PLUGIN_NAME             "FM-LUA"
+#define PLUGIN_VERSION          "0.1"
 
-#define PLUGIN_VERSION_MAJOR		0x01
-#define PLUGIN_VERSION_MINOR		0x0
+#define PLUGIN_VERSION_MAJOR		0x00
+#define PLUGIN_VERSION_MINOR		0x1
 #define PLUGIN_VERSION_BUILD		0x0
 
 
-#define PLUGIN_INFO             "This plug-in extends FileMaker applications by adding external functions."
+#define PLUGIN_INFO             "This plug-in enables FileMaker to execute LUA code."
 
-#define COMPANY_NAME            "Your Company"
-#define COPY_STATEMENT          "Copyright ©2010 by " COMPANY_NAME
+#define COMPANY_NAME            "N/A"
+#define COPY_STATEMENT          "Copyright ©2011"
 
 #define WANT_IDLE               0           // set to 1 if you want idle-processing
 #define WANT_PREFERENCES        0           // set to 1 if you want to handle preferences
@@ -92,7 +92,7 @@
 //  Define Mac OS X specific information for you plug-in below.
 //
 
-#define PLUGIN_BUNDLE_ID    "com.yourcompany.myplugin"
+#define PLUGIN_BUNDLE_ID    "com.google.code.fmlua"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -106,9 +106,9 @@
 
 #define FILE_NAME_PC        "FMPlugin.fmx"  // A hint for user who accidentally renames your plug-in
 
-#define PLUGIN_INFO_PC      "This file is a FileMaker applications plug-in. To make this file effective, drop it into FileMaker's Extensions folder and launch the FileMaker application."
+#define PLUGIN_INFO_PC      "This plug-in enables FileMaker to execute LUA code."
 
-#define COMPANY_URL         "http://www.yourcompany.com/"
+#define COMPANY_URL         "http://code.google.com/p/fm-lua/"
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -160,7 +160,7 @@ enum {
 
 #define FUNCTION_1_C_NAME         Execute_Lua
 #define FUNCTION_1_FLAGS          fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs
-#define FUNCTION_1_PARAMS         kAtLeast_0_Parameters, kAtWorst_1_Parameter
+#define FUNCTION_1_PARAMS         kAtLeast_1_Parameter, kAtWorst_1_Parameter
 #define FUNCTION_1_PROTOTYPE      "Execute_Lua( { luaCode } )"
 
 /*#define FUNCTION_1_C_NAME         X24FT_Version
