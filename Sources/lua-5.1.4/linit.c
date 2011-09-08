@@ -16,6 +16,10 @@
 #include "luasocket/luasocket.h"
 #include "luasocket/mime.h"
 
+#include "luasocket/fullluasocket.h"
+#include "luasocket/fullluamime.h"
+#include "luasocket/fulllualtn12.h"
+
 static const luaL_Reg lualibs[] = {
   {"", luaopen_base},
   {LUA_LOADLIBNAME, luaopen_package},
@@ -25,8 +29,6 @@ static const luaL_Reg lualibs[] = {
   {LUA_STRLIBNAME, luaopen_string},
   {LUA_MATHLIBNAME, luaopen_math},
   {LUA_DBLIBNAME, luaopen_debug},
-  {"socket", luaopen_socket_core},
-  {"mime", luaopen_mime_core},
   {NULL, NULL}
 };
 
@@ -38,5 +40,8 @@ LUALIB_API void luaL_openlibs (lua_State *L) {
     lua_pushstring(L, lib->name);
     lua_call(L, 1, 0);
   }
+  luapreload_fullluasocket(L);
+  luapreload_fullluamime(L);
+  luapreload_fulllualtn12(L);
 }
 
