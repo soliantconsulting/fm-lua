@@ -15,7 +15,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "821E3172078E9069004B645E"
                BuildableName = "FMPluginDebug.fmplugin"
-               BlueprintName = "FMPlugin Mac OS X"
+               BlueprintName = "FM Lua"
                ReferencedContainer = "container:PlugInTemplate.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

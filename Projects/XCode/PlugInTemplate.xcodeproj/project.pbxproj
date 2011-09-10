@@ -10,6 +10,7 @@
 		1027E221141BE8E60065E036 /* lua.h in Headers */ = {isa = PBXBuildFile; fileRef = 1027E220141BE8E60065E036 /* lua.h */; };
 		1027E223141BE9220065E036 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 1027E222141BE9220065E036 /* lualib.h */; };
 		1027E225141C27560065E036 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1027E224141C27560065E036 /* liblua.a */; };
+		1027E228141C2A5B0065E036 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 1027E227141C2A5B0065E036 /* lauxlib.h */; };
 		821E31AB078E906A004B645E /* FMTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821E3188078E9069004B645E /* FMTemplate.cpp */; };
 		821E31AC078E906A004B645E /* FMTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3187078E9069004B645E /* FMTemplate.h */; };
 		821E31B0078E906A004B645E /* FMXCalcEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E317D078E9069004B645E /* FMXCalcEngine.h */; };
@@ -37,6 +38,8 @@
 		1027E220141BE8E60065E036 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "../../Sources/lua-5.1.4/lua.h"; sourceTree = "<group>"; };
 		1027E222141BE9220065E036 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "../../Sources/lua-5.1.4/lualib.h"; sourceTree = "<group>"; };
 		1027E224141C27560065E036 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = "../../Sources/lua-5.1.4/liblua.a"; sourceTree = "<group>"; };
+		1027E226141C29F90065E036 /* fm-luaDebug.fmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "fm-luaDebug.fmplugin"; path = "/Users/bengert/Documents/lua-plugin/fm-lua/Output/fm-luaDebug.fmplugin"; sourceTree = "<absolute>"; };
+		1027E227141C2A5B0065E036 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = "../../Sources/lua-5.1.4/lauxlib.h"; sourceTree = "<group>"; };
 		821E3176078E9069004B645E /* FMPlugin.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMPlugin.h; path = ../../Sources/FMPlugin.h; sourceTree = SOURCE_ROOT; };
 		821E3177078E9069004B645E /* FMPluginHandlers.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMPluginHandlers.cpp; path = ../../Sources/FMPluginHandlers.cpp; sourceTree = SOURCE_ROOT; };
 		821E3178078E9069004B645E /* FMPluginVersion.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMPluginVersion.cpp; path = ../../Sources/FMPluginVersion.cpp; sourceTree = SOURCE_ROOT; };
@@ -60,7 +63,6 @@
 		826865A00797E91A006EAC37 /* 24u_plist_compiler.sh */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.script.sh; path = 24u_plist_compiler.sh; sourceTree = "<group>"; };
 		826865A10797E91A006EAC37 /* myplc.c */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.c; path = myplc.c; sourceTree = "<group>"; };
 		8268A926078E96A3008CA7C1 /* FMWrapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FMWrapper.framework; path = ../../Support/FMPlugInSDK/Libraries/FMWrapper.framework; sourceTree = SOURCE_ROOT; };
-		82D72FDF07BE25630063F5A9 /* FMPluginDebug.fmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = FMPluginDebug.fmplugin; path = "/Users/bengert/Documents/lua-plugin/fm-lua/Output/FMPluginDebug.fmplugin"; sourceTree = "<absolute>"; };
 		82E58B830795DF7900592B32 /* FMTConfig.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMTConfig.h; path = ../../Sources/FMTConfig.h; sourceTree = SOURCE_ROOT; };
 		B9BD41700A400925005A4D9D /* FMTemplatePrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FMTemplatePrefix.h; path = ../../Support/FMTemplate/FMTemplatePrefix.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -150,6 +152,7 @@
 		821E318C078E9069004B645E /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				1027E227141C2A5B0065E036 /* lauxlib.h */,
 				1027E224141C27560065E036 /* liblua.a */,
 				1027E222141BE9220065E036 /* lualib.h */,
 				1027E220141BE8E60065E036 /* lua.h */,
@@ -202,15 +205,16 @@
 				B9BD41710A400925005A4D9D /* FMTemplatePrefix.h in Headers */,
 				1027E221141BE8E60065E036 /* lua.h in Headers */,
 				1027E223141BE9220065E036 /* lualib.h in Headers */,
+				1027E228141C2A5B0065E036 /* lauxlib.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		821E3172078E9069004B645E /* FMPlugin Mac OS X */ = {
+		821E3172078E9069004B645E /* FM Lua */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B9CC614C0A3F262D007E1972 /* Build configuration list for PBXNativeTarget "FMPlugin Mac OS X" */;
+			buildConfigurationList = B9CC614C0A3F262D007E1972 /* Build configuration list for PBXNativeTarget "FM Lua" */;
 			buildPhases = (
 				821E316D078E9069004B645E /* Headers */,
 				821E316E078E9069004B645E /* Sources */,
@@ -223,9 +227,9 @@
 			);
 			dependencies = (
 			);
-			name = "FMPlugin Mac OS X";
+			name = "FM Lua";
 			productName = "FMPlugin Mac OS X Release";
-			productReference = 82D72FDF07BE25630063F5A9 /* FMPluginDebug.fmplugin */;
+			productReference = 1027E226141C29F90065E036 /* fm-luaDebug.fmplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -248,7 +252,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				821E3172078E9069004B645E /* FMPlugin Mac OS X */,
+				821E3172078E9069004B645E /* FM Lua */,
 			);
 		};
 /* End PBXProject section */
@@ -352,7 +356,7 @@
 				);
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = FMPluginDebug;
+				PRODUCT_NAME = "fm-luaDebug";
 				REZ_SCRIPT_TYPE = Roman;
 				REZ_SUPPRESS_REDECLARED_RESOURCE_TYPE_WARNINGS = NO;
 				SDKROOT = macosx10.6;
@@ -407,7 +411,7 @@
 				);
 				OTHER_LDFLAGS = "";
 				OTHER_REZFLAGS = "";
-				PRODUCT_NAME = FMPlugin;
+				PRODUCT_NAME = "fm-lua";
 				REZ_SCRIPT_TYPE = Roman;
 				REZ_SUPPRESS_REDECLARED_RESOURCE_TYPE_WARNINGS = NO;
 				SDKROOT = macosx10.6;
@@ -451,7 +455,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B9CC614C0A3F262D007E1972 /* Build configuration list for PBXNativeTarget "FMPlugin Mac OS X" */ = {
+		B9CC614C0A3F262D007E1972 /* Build configuration list for PBXNativeTarget "FM Lua" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B9CC614D0A3F262D007E1972 /* Development */,
