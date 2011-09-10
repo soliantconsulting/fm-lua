@@ -13,12 +13,12 @@
 #include "lualib.h"
 #include "lauxlib.h"
 
-#include "luasocket/luasocket.h"
-#include "luasocket/mime.h"
+#include "luasocket.h"
+#include "mime.h"
 
-#include "luasocket/fullluasocket.h"
-#include "luasocket/fullluamime.h"
-#include "luasocket/fulllualtn12.h"
+#include "fullluasocket.h"
+#include "fullluamime.h"
+#include "fulllualtn12.h"
 
 static const luaL_Reg lualibs[] = {
   {"", luaopen_base},

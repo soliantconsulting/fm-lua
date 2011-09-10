@@ -4,8 +4,8 @@
 *
 * RCS ID: $Id: buffer.c,v 1.28 2007/06/11 23:44:54 diego Exp $
 \*=========================================================================*/
-#include "../lua.h"
-#include "../lauxlib.h"
+#include "lua.h"
+#include "lauxlib.h"
 
 #include "buffer.h"
 

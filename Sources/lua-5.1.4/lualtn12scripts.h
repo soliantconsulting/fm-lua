@@ -1,7 +1,7 @@
 #ifndef _____LUALTN12SCRIPTS__
 #define _____LUALTN12SCRIPTS__
 
-#include "../lua.h"
+#include "lua.h"
 
 #ifndef LUAOPEN_API 
 #define LUAOPEN_API 

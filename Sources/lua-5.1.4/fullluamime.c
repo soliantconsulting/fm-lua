@@ -1,5 +1,5 @@
-#include "../lua.h"
-#include "../lauxlib.h"
+#include "lua.h"
+#include "lauxlib.h"
 
 #include "mime.h"
 #include "mimescripts.h"

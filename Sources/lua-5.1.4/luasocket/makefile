@@ -1,7 +1,7 @@
 #------
 # Load configuration
 #
-include ../config
+include config
 
 #------
 # Hopefully no need to change anything below this line
@@ -25,7 +25,13 @@ SOCKET_OBJS:= \
 	udp.o \
 	except.o \
 	select.o \
-	usocket.o 
+	usocket.o \
+	luasocketscripts.o \
+	lualtn12scripts.o \
+	mimescripts.o \
+	fullluamime.o \
+	fullluasocket.o \
+	fulllualtn12.o
 
 #------
 # Modules belonging mime-core
@@ -50,10 +56,10 @@ UNIX_OBJS:=\
 all: $(SOCKET_SO) $(MIME_SO) 
 
 $(SOCKET_SO): $(SOCKET_OBJS)
-	$(LD) $(LDFLAGS) -o $@ $(SOCKET_OBJS)
+	$(LD) $(LDFLAGS) -arch i386 -o $@ $(SOCKET_OBJS)
 
 $(MIME_SO): $(MIME_OBJS)
-	$(LD) $(LDFLAGS) -o $@ $(MIME_OBJS)
+	$(LD) $(LDFLAGS) -arch i386 -o $@ $(MIME_OBJS)
 
 $(UNIX_SO): $(UNIX_OBJS)
 	$(LD) $(LDFLAGS) -o $@ $(UNIX_OBJS)

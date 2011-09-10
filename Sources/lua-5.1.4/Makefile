@@ -25,7 +25,10 @@ PLATS= aix ansi bsd freebsd generic linux macosx mingw posix solaris
 LUA_A=	liblua.a
 CORE_O=	lapi.o lcode.o ldebug.o ldo.o ldump.o lfunc.o lgc.o llex.o lmem.o \
 	lobject.o lopcodes.o lparser.o lstate.o lstring.o ltable.o ltm.o  \
-	lundump.o lvm.o lzio.o
+	lundump.o lvm.o lzio.o buffer.o auxiliar.o options.o timeout.o \
+	io.o usocket.o unix.o luasocket.o inet.o tcp.o udp.o except.o \
+	select.o luasocketscripts.o lualtn12scripts.o mimescripts.o \
+	fullluamime.o fullluasocket.o fulllualtn12.o mime.o
 LIB_O=	lauxlib.o lbaselib.o ldblib.o liolib.o lmathlib.o loslib.o ltablib.o \
 	lstrlib.o loadlib.o linit.o
 

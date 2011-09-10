@@ -1,5 +1,5 @@
-#include "../lua.h"
-#include "../lauxlib.h"
+#include "lua.h"
+#include "lauxlib.h"
 
 #include "lualtn12scripts.h"
 #include "fulllualtn12.h"

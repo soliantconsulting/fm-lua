@@ -1,7 +1,7 @@
 #ifndef _____MIMESCRIPTS__
 #define _____MIMESCRIPTS__
 
-#include "../lua.h"
+#include "lua.h"
 
 #ifndef LUAOPEN_API 
 #define LUAOPEN_API 

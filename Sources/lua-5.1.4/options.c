@@ -6,7 +6,7 @@
 \*=========================================================================*/
 #include <string.h> 
 
-#include "../lauxlib.h"
+#include "lauxlib.h"
 
 #include "auxiliar.h"
 #include "options.h"

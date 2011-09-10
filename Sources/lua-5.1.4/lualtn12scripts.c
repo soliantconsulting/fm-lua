@@ -1,5 +1,5 @@
-#include "../lua.h"
-#include "../lauxlib.h"
+#include "lua.h"
+#include "lauxlib.h"
 #include "lualtn12scripts.h"
 
 static const unsigned char B1[]={

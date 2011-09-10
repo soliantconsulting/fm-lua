@@ -1,7 +1,7 @@
 #ifndef _____LUASOCKETSCRIPTS__
 #define _____LUASOCKETSCRIPTS__
 
-#include "../lua.h"
+#include "lua.h"
 
 #ifndef LUAOPEN_API 
 #define LUAOPEN_API 
