@@ -1,6 +1,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C++ Express 2010
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FMPlugin", "PlugInTemplate.vcxproj", "{4182C2DB-FD86-4886-BC73-DA9CA303B509}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fm-lua", "PlugInTemplate.vcxproj", "{4182C2DB-FD86-4886-BC73-DA9CA303B509}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1278ECBB-0F4C-45C9-81DF-BEA477690993} = {1278ECBB-0F4C-45C9-81DF-BEA477690993}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lualib", "lualib.vcxproj", "{1278ECBB-0F4C-45C9-81DF-BEA477690993}"
 EndProject

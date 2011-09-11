@@ -11,7 +11,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectName>FMPlugin</ProjectName>
+    <ProjectName>fm-lua</ProjectName>
     <ProjectGuid>{4182C2DB-FD86-4886-BC73-DA9CA303B509}</ProjectGuid>
     <RootNamespace>FM Template 2.0</RootNamespace>
     <Keyword>Win32Proj</Keyword>

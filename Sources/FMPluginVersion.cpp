@@ -35,19 +35,7 @@
 //
 ////////////////////////////////////////////////////////////////////////
 
-//
-//  This source file contains code for the plug-in's Version function. Since
-//  it is recommended for every FileMaker Plug-in to have a function to check
-//  the plug-in's version, we have written a simple version function for you.
-//  When en empty string is passed to this function, it simply returns the
-//  version of this plug-in, as defined in the FMTConfig.h header file.
-//
-//  As a bonus for you, if you pass the string "platform" as a parameter to this
-//  function, it will respond with the information about which code is being
-//  used, whether it is Mac OS X code, or Windows code. If you pass the string
-//  "long" to this function, a long version string consisting of the plug-in's
-//  name and version is returned.
-//
+// This file has been edited from the plugin template
 ////////////////////////////////////////////////////////////////////////////////
 
 
