@@ -122,6 +122,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\FMPlugin.h" />
+    <ClInclude Include="..\..\Sources\FMPluginVersion.h" />
     <ClInclude Include="..\..\Sources\FMTConfig.h" />
     <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXBinaryData.h" />
     <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXCalcEngine.h" />

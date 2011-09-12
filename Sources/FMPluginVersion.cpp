@@ -52,6 +52,93 @@ extern "C"
 #pragma mark X24FT_Version
 
 
+
+/**
+ * provie a function to let lua call ExecuteFileSQL
+ * 
+ * returns the error result
+ */
+/*
+commenting this out for now as ExecuteFileSQL really only works on 11
+and does not link nicely with the current sdk.
+int lua_fmExecuteFileSQL(lua_State *L)
+{
+	int n = lua_gettop(L);
+    
+	//we need to get passed something to eval
+	if (n == 0)
+		return -1;
+    
+	fmx::ExprEnvAutoPtr fenvCurrEnv; 
+	fmx::TextAutoPtr	expression;
+	fmx::TextAutoPtr	filename;
+    fmx::DataVectAutoPtr data;
+    fmx::RowVectAutoPtr row; 
+	fmx::errcode		err			= 0;
+	fmx::DataAutoPtr result;
+    
+	//get the current envirement
+	err = FMX_SetToCurrentEnv(&(*fenvCurrEnv));
+	//it looks like we failed to get the envirement :( that's bad
+	if (err != 0)
+	{
+		lua_pushnumber(L, err);
+		lua_pushstring(L,"Internal Error getting Filemaker Envirement" );
+		return 2;
+	}
+	//get the string from lua
+	expression->AssignWithLength(lua_tostring(L, 1), lua_strlen(L, 1), fmx::Text::kEncoding_UTF8);
+    filename->AssignWithLength(lua_tostring(L, 2),lua_strlen(L, 2),  fmx::Text::kEncoding_UTF8);
+	//tell filemaker to evaluate the string
+	//ExecuteFileSQL ( const Text &expression, const Text &filename, const DataVect &parameters, RowVect& result ) const;
+    err = fenvCurrEnv->ExecuteFileSQL( *expression, *filename, *data, *row );
+	
+	lua_pushnumber(L, err);
+	return 1;
+}*/
+
+/**
+ * provie a function to let lua call executesql
+ * 
+ * returns the error result
+ */
+int lua_fmExecuteSQL(lua_State *L)
+{
+	int n = lua_gettop(L);
+    
+	//we need to get passed something to eval
+	if (n == 0)
+		return -1;
+    
+	fmx::ExprEnvAutoPtr fenvCurrEnv; 
+	fmx::TextAutoPtr	expression;
+	fmx::unichar		colSep		= 0x0009;
+	fmx::unichar		rowSep		= 0x000d;
+	fmx::errcode		err			= 0;
+	fmx::DataAutoPtr result;
+    
+	//get the current envirement
+	err = FMX_SetToCurrentEnv(&(*fenvCurrEnv));
+	//it looks like we failed to get the envirement :( that's bad
+	if (err != 0)
+	{
+		lua_pushnumber(L, err);
+		lua_pushstring(L,"Internal Error getting Filemaker Envirement" );
+		return 2;
+	}
+	//get the string from lua
+	expression->AssignWithLength(lua_tostring(L, 1), lua_strlen(L, 1), fmx::Text::kEncoding_UTF8);
+    
+	//tell filemaker to evaluate the string
+	//err = fenvCurrEnv->Evaluate(*ftxtCalc, *fdatResults);
+    err = fenvCurrEnv->ExecuteSQL( *expression, *result, colSep, rowSep );
+	//Looks like filemaker didn't like the code so return the error code and a string
+	
+	lua_pushnumber(L, err);
+	return 1;
+}
+
+
 /**
  * provie a function to let lua call evaluate 
  * 
@@ -108,7 +195,11 @@ int lua_fmEvaluate(lua_State *L)
 	return 2;
 }
 
-
+/**
+ * provie a function to let lua call a script with in a file.  I need to add support for passing a paramater.
+ * 
+ * returns the error result
+ */
 int lua_fmScript(lua_State *L)
 {
 	int n = lua_gettop(L);
@@ -166,8 +257,6 @@ FMX_PROC(fmx::errcode) Execute_Lua(short funcId, const fmx::ExprEnv& environment
 #pragma unused(funcId,environment)
 	
     fmx::errcode        err = 0;
-    FMX_Unichar         pluginName[256];
-    FMX_Unichar         pluginVersion[256];
     fmx::TextAutoPtr    tempText;
     fmx::TextAutoPtr    resultText;
     
@@ -188,8 +277,8 @@ FMX_PROC(fmx::errcode) Execute_Lua(short funcId, const fmx::ExprEnv& environment
 		//register our custom functions
 		lua_register(L, "fmEvaluate", lua_fmEvaluate);
 		lua_register(L, "fmScript", lua_fmScript);
-        
-        
+        lua_register(L, "fmExecuteSQL", lua_fmExecuteSQL);
+        //lua_register(L, "fmExecuteFileSQL", lua_fmExecuteFileSQL);
 		const long paramLen = outText.GetSize() + 1;
 		//unsigned long intParamSize = *parameter1->GetSize(); 
 		char *utf8Text;
@@ -197,26 +286,12 @@ FMX_PROC(fmx::errcode) Execute_Lua(short funcId, const fmx::ExprEnv& environment
 		outText.GetBytes( utf8Text, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 ); 
 		error = luaL_dostring(L,utf8Text);
         
-        
-        
 		resultText->AssignWithLength(lua_tostring(L, -1), lua_strlen(L, -1), fmx::Text::kEncoding_UTF8);
 		
-        
 		/* cleanup Lua */
 		lua_close(L);
         
         err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
-    }
-    else 
-    {
-        //The function has no parameter. Return short (default) version in the default locale.
-        
-        fmx::LocaleAutoPtr locale;
-        
-        ReadString( pluginVersion, sizeof(pluginName)/sizeof(FMX_Unichar), PLUGIN_VERSION_ID );
-        resultText->AssignUnicode(pluginVersion);
-        
-        err = result.SetAsText( *resultText, *locale );
     }
     
     return err;

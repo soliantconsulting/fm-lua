@@ -48,7 +48,14 @@
 
 #include "FMPlugin.h"
 #include "FMTemplate/FMTemplate.h"
+#include "FMPluginVersion.h"
 
+extern "C"
+{
+#include <lua.h>
+#include <lauxlib.h>
+#include <lualib.h>
+}
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -184,6 +191,22 @@ void SemiSafeIdle(FMX_IdleLevel idleLevel)
     switch (idleLevel)
     {
         case kFMXT_UserNotIdle:
+			{
+				lua_State *L  = lua_open();
+        
+				/* load various Lua libraries */
+				luaL_openlibs(L);
+		
+				//register our custom functions
+				lua_register(L, "fmEvaluate", lua_fmEvaluate);
+				lua_register(L, "fmScript", lua_fmScript);
+				lua_register(L, "fmExecuteSQL", lua_fmExecuteSQL);
+				int error;
+				error = luaL_dostring(L,"require(\"onidle\")");
+		
+				lua_close(L);
+			}
+			break;
         case kFMXT_ScriptPaused:
         case kFMXT_ScriptRunning:
           break;            

@@ -71,6 +71,9 @@
     <ClInclude Include="..\..\Support\FMTemplate\FMUtils.h">
       <Filter>Support\FMTemplate</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Sources\FMPluginVersion.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Sources\FMPluginHandlers.cpp">

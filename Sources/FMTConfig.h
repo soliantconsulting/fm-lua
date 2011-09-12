@@ -104,7 +104,7 @@
 //  Define Windows specific information for you plug-in below.
 //
 
-#define FILE_NAME_PC        "FMPlugin.fmx"  // A hint for user who accidentally renames your plug-in
+#define FILE_NAME_PC        "fm-lua.fmx"  // A hint for user who accidentally renames your plug-in
 
 #define PLUGIN_INFO_PC      "This plug-in enables FileMaker to execute LUA code."
 
