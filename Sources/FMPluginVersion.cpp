@@ -115,13 +115,13 @@ int lua_fmExecuteSQL(lua_State *L)
 	fmx::unichar		colSep		= 0x0009;
 	fmx::unichar		rowSep		= 0x000d;
 	fmx::errcode		err			= 0;
-	fmx::DataAutoPtr result;
+	fmx::DataAutoPtr fdatResults;
+	fmx::TextAutoPtr ftxtResults; 
     
 	//get the current envirement
 	err = FMX_SetToCurrentEnv(&(*fenvCurrEnv));
 	//it looks like we failed to get the envirement :( that's bad
-	if (err != 0)
-	{
+	if (err != 0) {
 		lua_pushnumber(L, err);
 		lua_pushstring(L,"Internal Error getting Filemaker Envirement" );
 		return 2;
@@ -131,11 +131,24 @@ int lua_fmExecuteSQL(lua_State *L)
     
 	//tell filemaker to evaluate the string
 	//err = fenvCurrEnv->Evaluate(*ftxtCalc, *fdatResults);
-    err = fenvCurrEnv->ExecuteSQL( *expression, *result, colSep, rowSep );
+    err = fenvCurrEnv->ExecuteSQL( *expression, *fdatResults, colSep, rowSep );
 	//Looks like filemaker didn't like the code so return the error code and a string
-	
-	lua_pushnumber(L, err);
-	return 1;
+	/*if (err == 0) {
+		lua_pushnumber(L, err);
+		return 1;
+	}*/
+
+	ftxtResults->SetText(fdatResults->GetAsText());
+    
+	int paramLen = ftxtResults->GetSize() +1;
+	char *utf8Text;
+	utf8Text = new char[paramLen];
+    
+	ftxtResults->GetBytes( utf8Text, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 ); 
+    
+	lua_pushnumber(L, err );
+	lua_pushstring(L,utf8Text );
+	return 2;
 }
 
 
