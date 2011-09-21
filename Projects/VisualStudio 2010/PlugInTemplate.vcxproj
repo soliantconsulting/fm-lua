@@ -121,6 +121,7 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Sources\CustomFunctions.h" />
     <ClInclude Include="..\..\Sources\FMPlugin.h" />
     <ClInclude Include="..\..\Sources\FMPluginVersion.h" />
     <ClInclude Include="..\..\Sources\FMTConfig.h" />
@@ -136,8 +137,10 @@
     <ClInclude Include="..\..\Support\FMPlugInSDK\Headers\FMWrapper\FMXTypes.h" />
     <ClInclude Include="..\..\Support\FMTemplate\FMTemplate.h" />
     <ClInclude Include="..\..\Support\FMTemplate\FMUtils.h" />
+    <ClInclude Include="CustomFunctions.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Sources\CustomFunctions.cpp" />
     <ClCompile Include="..\..\Sources\FMPluginHandlers.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(FileName)1.obj</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(FileName)1.obj</ObjectFileName>

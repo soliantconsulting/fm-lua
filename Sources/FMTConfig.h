@@ -161,17 +161,13 @@ enum {
 #define FUNCTION_1_C_NAME         Execute_Lua
 #define FUNCTION_1_FLAGS          fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs
 #define FUNCTION_1_PARAMS         kAtLeast_1_Parameter, kAtWorst_1_Parameter
-#define FUNCTION_1_PROTOTYPE      "Execute_Lua( { luaCode } )"
+#define FUNCTION_1_PROTOTYPE      "Execute_Lua( luaCode )"
 
-/*#define FUNCTION_1_C_NAME         X24FT_Version
-#define FUNCTION_1_FLAGS          fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs
-#define FUNCTION_1_PARAMS         kAtLeast_0_Parameters, kAtWorst_1_Parameter
-#define FUNCTION_1_PROTOTYPE      "X24FT_Version( { versionFormat } )"
-
-#define FUNCTION_2_C_NAME         Execute_Lua
+//I wonder if I should block this on the server as it would have a large scope
+#define FUNCTION_2_C_NAME         Register_Lua_Function
 #define FUNCTION_2_FLAGS          fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs
-#define FUNCTION_2_PARAMS         kAtLeast_0_Parameters, kAtWorst_1_Parameter
-#define FUNCTION_2_PROTOTYPE      "Execute_Lua( { luaCode } )"*/
+#define FUNCTION_2_PARAMS         kAtLeast_2_Parameters, kAtWorst_2_Parameters
+#define FUNCTION_2_PROTOTYPE      "Register_Lua_Function( signature, luaCode )"
 
 //#define FUNCTION_3_C_NAME         X24FT_Function3
 //#define FUNCTION_3_FLAGS          fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs

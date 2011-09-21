@@ -74,6 +74,12 @@
     <ClInclude Include="..\..\Sources\FMPluginVersion.h">
       <Filter>Sources</Filter>
     </ClInclude>
+    <ClInclude Include="CustomFunctions.h">
+      <Filter>Support</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\CustomFunctions.h">
+      <Filter>Sources</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Sources\FMPluginHandlers.cpp">
@@ -90,6 +96,9 @@
     </ClCompile>
     <ClCompile Include="..\..\Support\VisualStudio\FMPluginDllEntryPoint.cpp">
       <Filter>Support\VisualStudio</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\CustomFunctions.cpp">
+      <Filter>Sources</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
