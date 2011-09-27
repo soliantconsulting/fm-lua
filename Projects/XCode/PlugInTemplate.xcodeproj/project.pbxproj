@@ -11,6 +11,8 @@
 		1027E223141BE9220065E036 /* lualib.h in Headers */ = {isa = PBXBuildFile; fileRef = 1027E222141BE9220065E036 /* lualib.h */; };
 		1027E225141C27560065E036 /* liblua.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1027E224141C27560065E036 /* liblua.a */; };
 		1027E228141C2A5B0065E036 /* lauxlib.h in Headers */ = {isa = PBXBuildFile; fileRef = 1027E227141C2A5B0065E036 /* lauxlib.h */; };
+		1039928B1431FD95000726C9 /* CustomFunctions.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 103992891431FD95000726C9 /* CustomFunctions.cpp */; };
+		1039928C1431FD95000726C9 /* CustomFunctions.h in Headers */ = {isa = PBXBuildFile; fileRef = 1039928A1431FD95000726C9 /* CustomFunctions.h */; };
 		821E31AB078E906A004B645E /* FMTemplate.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 821E3188078E9069004B645E /* FMTemplate.cpp */; };
 		821E31AC078E906A004B645E /* FMTemplate.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E3187078E9069004B645E /* FMTemplate.h */; };
 		821E31B0078E906A004B645E /* FMXCalcEngine.h in Headers */ = {isa = PBXBuildFile; fileRef = 821E317D078E9069004B645E /* FMXCalcEngine.h */; };
@@ -38,8 +40,10 @@
 		1027E220141BE8E60065E036 /* lua.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lua.h; path = "../../Sources/lua-5.1.4/lua.h"; sourceTree = "<group>"; };
 		1027E222141BE9220065E036 /* lualib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lualib.h; path = "../../Sources/lua-5.1.4/lualib.h"; sourceTree = "<group>"; };
 		1027E224141C27560065E036 /* liblua.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = liblua.a; path = "../../Sources/lua-5.1.4/liblua.a"; sourceTree = "<group>"; };
-		1027E226141C29F90065E036 /* fm-luaDebug.fmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = "fm-luaDebug.fmplugin"; path = "/Users/bengert/Documents/lua-plugin/fm-lua/Output/fm-luaDebug.fmplugin"; sourceTree = "<absolute>"; };
 		1027E227141C2A5B0065E036 /* lauxlib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = lauxlib.h; path = "../../Sources/lua-5.1.4/lauxlib.h"; sourceTree = "<group>"; };
+		103992881431FD76000726C9 /* fm-luaDebug.fmplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "fm-luaDebug.fmplugin"; sourceTree = BUILT_PRODUCTS_DIR; };
+		103992891431FD95000726C9 /* CustomFunctions.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CustomFunctions.cpp; path = ../../Sources/CustomFunctions.cpp; sourceTree = "<group>"; };
+		1039928A1431FD95000726C9 /* CustomFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomFunctions.h; path = ../../Sources/CustomFunctions.h; sourceTree = "<group>"; };
 		821E3176078E9069004B645E /* FMPlugin.h */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.h; name = FMPlugin.h; path = ../../Sources/FMPlugin.h; sourceTree = SOURCE_ROOT; };
 		821E3177078E9069004B645E /* FMPluginHandlers.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMPluginHandlers.cpp; path = ../../Sources/FMPluginHandlers.cpp; sourceTree = SOURCE_ROOT; };
 		821E3178078E9069004B645E /* FMPluginVersion.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = FMPluginVersion.cpp; path = ../../Sources/FMPluginVersion.cpp; sourceTree = SOURCE_ROOT; };
@@ -89,12 +93,15 @@
 				821E317A078E9069004B645E /* Support */,
 				821E318C078E9069004B645E /* Libraries */,
 				821E31C3078E906C004B645E /* Frameworks */,
+				103992881431FD76000726C9 /* fm-luaDebug.fmplugin */,
 			);
 			sourceTree = "<group>";
 		};
 		821E3174078E9069004B645E /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				103992891431FD95000726C9 /* CustomFunctions.cpp */,
+				1039928A1431FD95000726C9 /* CustomFunctions.h */,
 				821E3176078E9069004B645E /* FMPlugin.h */,
 				82E58B830795DF7900592B32 /* FMTConfig.h */,
 				821E3177078E9069004B645E /* FMPluginHandlers.cpp */,
@@ -206,6 +213,7 @@
 				1027E221141BE8E60065E036 /* lua.h in Headers */,
 				1027E223141BE9220065E036 /* lualib.h in Headers */,
 				1027E228141C2A5B0065E036 /* lauxlib.h in Headers */,
+				1039928C1431FD95000726C9 /* CustomFunctions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,7 +237,7 @@
 			);
 			name = "FM Lua";
 			productName = "FMPlugin Mac OS X Release";
-			productReference = 1027E226141C29F90065E036 /* fm-luaDebug.fmplugin */;
+			productReference = 103992881431FD76000726C9 /* fm-luaDebug.fmplugin */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -309,6 +317,7 @@
 				821E31BD078E906A004B645E /* FMUtils.cpp in Sources */,
 				821E31BF078E906A004B645E /* FMPluginHandlers.cpp in Sources */,
 				821E31C0078E906A004B645E /* FMPluginVersion.cpp in Sources */,
+				1039928B1431FD95000726C9 /* CustomFunctions.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
