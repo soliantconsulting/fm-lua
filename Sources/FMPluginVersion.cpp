@@ -42,6 +42,9 @@
 #include "FMPlugin.h"
 #include "FMTemplate/FMTemplate.h"
 #include "CustomFunctions.h"
+#include <string>
+#include <vector>
+#include <stdio.h>
 
 extern "C"
 {
@@ -52,7 +55,7 @@ extern "C"
 
 #pragma mark X24FT_Version
 
-
+using namespace std;
 
 /**
  * provie a function to let lua call ExecuteFileSQL
@@ -311,12 +314,6 @@ FMX_PROC(fmx::errcode) Custom_Lua_Function(short funcId, const fmx::ExprEnv& env
     fmx::errcode        err = 0;
     fmx::TextAutoPtr    tempText;
     fmx::TextAutoPtr    resultText;
-    
-    
-    //We have at least one parameter. Read it and return correct information.
-    
-    //const fmx::Text& parameter1 = dataVect.AtAsText(0);
-    const fmx::TextAutoPtr outText;
         
 	int error;
 		
@@ -330,34 +327,56 @@ FMX_PROC(fmx::errcode) Custom_Lua_Function(short funcId, const fmx::ExprEnv& env
 	lua_register(L, "fmScript", lua_fmScript);
     lua_register(L, "fmExecuteSQL", lua_fmExecuteSQL);
     //lua_register(L, "fmExecuteFileSQL", lua_fmExecuteFileSQL);
+	error = luaL_dostring(L,"fmArgs = {}");
+
+
+	char *utf8Text;
+	for(int i = 0; i < (int)dataVect.Size(); i++)
+	{
+		const fmx::Text& param = dataVect.AtAsText(i);
+		long paramLen = param.GetSize() + 1;
+		utf8Text = new char[paramLen];
+		param.GetBytes( utf8Text, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
+		error = luaL_dostring(L,utf8Text);
+	}
 
 	//outText.GetBytes( utf8Text, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
 	error = luaL_dostring(L,CustomFunctions::functionDefinitions[funcId-CustomFunctions::indexOffSet]);
-      
-
-
-
+    
 	resultText->AssignWithLength(lua_tostring(L, -1), lua_strlen(L, -1), fmx::Text::kEncoding_UTF8);
 		
 	/* cleanup Lua */
 	lua_close(L);
-        
-    err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
-	//resultText->AssignWithLength(CustomFunctions::functionDefinitions[funcId-CustomFunctions::indexOffSet], lua_strlen(L, -1), fmx::Text::kEncoding_UTF8);
-	//resultText->Assign(CustomFunctions::functionDefinitions[funcId-CustomFunctions::indexOffSet]);
-	
-	//resultText->Assign("called the custom function!");
-	/* cleanup Lua */
-	//lua_close(L);
     
-    //err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
-	//err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
-	//fmx::FixPtAutoPtr fmNumber; 
-	//fmNumber->AssignInt(CustomFunctions::indexOffSet + funcId); 
-	//result.SetAsNumber( *fmNumber);
+    err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
+
     return err;
 }
 
+
+vector<string> StringExplode(string str, string separator){
+	vector<string> *results;
+    int found;
+	str.replace(str.begin(), str.end(),"{");
+	str.replace(str.begin(), str.end(),"}");
+	str.replace(str.begin(), str.end()," ");
+	str.replace(str.begin(), str.end(),".");
+	str.replace(str.begin(), str.end(),"\\");
+	str.replace(str.begin(), str.end(),"/");
+	str.replace(str.begin(), str.end(),"(");
+	str.replace(str.begin(), str.end(),")");
+    found = str.find_first_of(separator);
+    while(found != string::npos){
+        if(found > 0){
+            results->push_back(str.substr(0,found));
+        }
+        str = str.substr(found+1);
+        found = str.find_first_of(separator);
+    }
+    if(str.length() > 0){
+        results->push_back(str);
+    }
+}
 
 //Execute_Lua
 FMX_PROC(fmx::errcode) Register_Lua_Function(short funcId, const fmx::ExprEnv& environment, const fmx::DataVect& dataVect, fmx::Data& result)
@@ -372,28 +391,41 @@ FMX_PROC(fmx::errcode) Register_Lua_Function(short funcId, const fmx::ExprEnv& e
     {
         //We have at least one parameter. Read it and return correct information.
         
-        const fmx::Text& prototype  = dataVect.AtAsText(0);
+        fmx::TextAutoPtr funcName;
+		fmx::TextAutoPtr funcParams;
+		funcName->SetText(dataVect.AtAsText(0));
+		funcParams->SetText(dataVect.AtAsText(0));
+		fmx::TextAutoPtr parenthese;
+		parenthese->Assign("(");
+		funcName->DeleteText(funcName->Find(*parenthese,0));
+
+		//this should be after the (
+		funcParams->DeleteText(0,funcName->Find(*parenthese,0));
+		char *paramChar;
+		paramChar = new char[funcParams->GetSize()];
+		funcParams->GetBytes( paramChar, funcParams->GetSize(), 0, funcParams->GetSize(), fmx::Text::kEncoding_UTF8 );
+
 		const fmx::Text& luacode = dataVect.AtAsText(1);
         
-		
 		const long paramLen = luacode.GetSize() + 1;
 		//unsigned long intParamSize = *parameter1->GetSize(); 
-		char *utf8Text;
-		utf8Text = new char[paramLen];
-		CustomFunctions::functionDefinitions.push_back(utf8Text);
-		luacode.GetBytes( utf8Text, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
-		/*err = RegisterExternalFunction(CustomFunctions::functionDefinitions.size() + CustomFunctions::indexOffSet - 1 ,
-			0,5 , fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs, Custom_Lua_Function );
-        */
+		char *luacodeChar;
+		luacodeChar = new char[paramLen];
+		luacode.GetBytes( luacodeChar, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
+		CustomFunctions::functionDefinitions.push_back(luacodeChar);
+		
+		
+
 
 		fmx::QuadCharAutoPtr    pluginID(PLUGIN_ID_STRING[0], PLUGIN_ID_STRING[1], PLUGIN_ID_STRING[2], PLUGIN_ID_STRING[3]);
 		err = fmx::ExprEnv::RegisterExternalFunction ( *pluginID, CustomFunctions::functionDefinitions.size() + CustomFunctions::indexOffSet - 1,
-			prototype, prototype, 0, 5, fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs, Custom_Lua_Function );
+			*funcName, dataVect.AtAsText(0), 0, 5, fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs, Custom_Lua_Function );
 		
 		//err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
 		fmx::FixPtAutoPtr fmNumber; 
-		fmNumber->AssignInt(CustomFunctions::functionDefinitions.size()); 
+		fmNumber->AssignInt(err); 
 		result.SetAsNumber(*fmNumber);
+		
     }
     
     return err;
