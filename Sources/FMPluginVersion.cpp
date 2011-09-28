@@ -327,21 +327,23 @@ FMX_PROC(fmx::errcode) Custom_Lua_Function(short funcId, const fmx::ExprEnv& env
 	lua_register(L, "fmScript", lua_fmScript);
     lua_register(L, "fmExecuteSQL", lua_fmExecuteSQL);
     //lua_register(L, "fmExecuteFileSQL", lua_fmExecuteFileSQL);
-	error = luaL_dostring(L,"fmArgs = {}");
+
+	CustomFunc func = CustomFunctions::functions[funcId-CustomFunctions::indexOffSet];
 
 
 	char *utf8Text;
-	for(int i = 0; i < (int)dataVect.Size(); i++)
+	for(int i = 0; i < (int)dataVect.Size() && i < (int)func.paramaters.size(); i++)
 	{
 		const fmx::Text& param = dataVect.AtAsText(i);
 		long paramLen = param.GetSize() + 1;
 		utf8Text = new char[paramLen];
 		param.GetBytes( utf8Text, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
-		error = luaL_dostring(L,utf8Text);
+		lua_pushstring(L,utf8Text);
+		lua_setglobal(L, func.paramaters[i]);
 	}
 
 	//outText.GetBytes( utf8Text, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
-	error = luaL_dostring(L,CustomFunctions::functionDefinitions[funcId-CustomFunctions::indexOffSet]);
+	error = luaL_dostring(L,func.luacode);
     
 	resultText->AssignWithLength(lua_tostring(L, -1), lua_strlen(L, -1), fmx::Text::kEncoding_UTF8);
 		
@@ -353,29 +355,63 @@ FMX_PROC(fmx::errcode) Custom_Lua_Function(short funcId, const fmx::ExprEnv& env
     return err;
 }
 
+//http://www.zedwood.com/article/105/cpp-strreplace-function
+string& str_replace(const string &search, const string &replace, string &subject)
+{
+    string buffer;
+   
+    int sealeng = search.length();
+    int strleng = subject.length();
 
-vector<string> StringExplode(string str, string separator){
-	vector<string> *results;
+    if (sealeng==0)
+        return subject;//no change
+
+    for(int i=0, j=0; i<strleng; j=0 )
+    {
+        while (i+j<strleng && j<sealeng && subject[i+j]==search[j])
+            j++;
+        if (j==sealeng)//found 'search'
+        {
+            buffer.append(replace);
+            i+=sealeng;
+        }
+        else
+        {
+            buffer.append( &subject[i++], 1);
+        }
+    }
+    subject = buffer;
+    return subject;
+}
+
+vector<const char*> StringExplode(string str, string separator){
+	vector<const char*> *results = new vector<const char*>();
     int found;
-	str.replace(str.begin(), str.end(),"{");
-	str.replace(str.begin(), str.end(),"}");
-	str.replace(str.begin(), str.end()," ");
-	str.replace(str.begin(), str.end(),".");
-	str.replace(str.begin(), str.end(),"\\");
-	str.replace(str.begin(), str.end(),"/");
-	str.replace(str.begin(), str.end(),"(");
-	str.replace(str.begin(), str.end(),")");
+
+	//remove a lot of junk charecters so we can just explode on ,
+	//if the user sends some funky charecters it might break stuff but that's the users fault
+	str = str_replace("{","", str);
+	str = str_replace("}","", str);
+	str = str_replace(" ","", str);
+	str = str_replace(".","", str);
+	str = str_replace("\\","", str);
+	str = str_replace("/","", str);
+	str = str_replace(")","", str);
+	str = str_replace("(","", str);
+	str = str_replace("&","", str);
+
     found = str.find_first_of(separator);
-    while(found != string::npos){
-        if(found > 0){
-            results->push_back(str.substr(0,found));
+    while(found != string::npos) {
+        if(found > 0) {
+            results->push_back(str.substr(0,found).c_str());
         }
         str = str.substr(found+1);
         found = str.find_first_of(separator);
     }
-    if(str.length() > 0){
-        results->push_back(str);
+    if(str.length() > 0) {
+        results->push_back(str.c_str());
     }
+	return *results;
 }
 
 //Execute_Lua
@@ -402,8 +438,8 @@ FMX_PROC(fmx::errcode) Register_Lua_Function(short funcId, const fmx::ExprEnv& e
 		//this should be after the (
 		funcParams->DeleteText(0,funcName->Find(*parenthese,0));
 		char *paramChar;
-		paramChar = new char[funcParams->GetSize()];
-		funcParams->GetBytes( paramChar, funcParams->GetSize(), 0, funcParams->GetSize(), fmx::Text::kEncoding_UTF8 );
+		paramChar = new char[funcParams->GetSize()+1];
+		funcParams->GetBytes( paramChar, funcParams->GetSize()+1, 0, funcParams->GetSize()+1, fmx::Text::kEncoding_UTF8 );
 
 		const fmx::Text& luacode = dataVect.AtAsText(1);
         
@@ -412,20 +448,22 @@ FMX_PROC(fmx::errcode) Register_Lua_Function(short funcId, const fmx::ExprEnv& e
 		char *luacodeChar;
 		luacodeChar = new char[paramLen];
 		luacode.GetBytes( luacodeChar, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
-		CustomFunctions::functionDefinitions.push_back(luacodeChar);
-		
-		
 
+		CustomFunc func;
+		func.luacode = luacodeChar;
+		func.paramaters = StringExplode(paramChar, ",");
+
+		CustomFunctions::functions.push_back(func);
 
 		fmx::QuadCharAutoPtr    pluginID(PLUGIN_ID_STRING[0], PLUGIN_ID_STRING[1], PLUGIN_ID_STRING[2], PLUGIN_ID_STRING[3]);
-		err = fmx::ExprEnv::RegisterExternalFunction ( *pluginID, CustomFunctions::functionDefinitions.size() + CustomFunctions::indexOffSet - 1,
+		err = fmx::ExprEnv::RegisterExternalFunction ( *pluginID, CustomFunctions::functions.size() + CustomFunctions::indexOffSet - 1,
 			*funcName, dataVect.AtAsText(0), 0, 5, fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs, Custom_Lua_Function );
 		
 		//err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
 		fmx::FixPtAutoPtr fmNumber; 
-		fmNumber->AssignInt(err); 
+		//fmNumber->AssignInt(err); 
+		fmNumber->AssignInt((long)func.paramaters.size()); 
 		result.SetAsNumber(*fmNumber);
-		
     }
     
     return err;
