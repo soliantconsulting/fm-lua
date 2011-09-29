@@ -53,7 +53,7 @@
     <ClCompile>
       <Optimization>Disabled</Optimization>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Sources;$(ProjectDir)..\..\Support;$(ProjectDir)..\..\Support\FMPlugInSDK\Headers;%(AdditionalIncludeDirectories);$(ProjectDir)..\..\Sources\lua-5.1.4</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;FMTEMPLATE21_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_DEBUG;_WINDOWS;_USRDLL;FMTEMPLATE21_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -84,7 +84,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <AdditionalIncludeDirectories>$(ProjectDir)..\..\Sources;$(ProjectDir)..\..\Support;$(ProjectDir)..\..\Support\FMPlugInSDK\Headers;%(AdditionalIncludeDirectories);$(ProjectDir)..\..\Sources\lua-5.1.4</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;FMTEMPLATE20_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;NDEBUG;_WINDOWS;_USRDLL;FMTEMPLATE20_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <StructMemberAlignment>8Bytes</StructMemberAlignment>
       <DisableLanguageExtensions>false</DisableLanguageExtensions>
@@ -121,6 +121,10 @@
     </ResourceCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\Sources\bstring\bsafe.h" />
+    <ClInclude Include="..\..\Sources\bstring\bstraux.h" />
+    <ClInclude Include="..\..\Sources\bstring\bstrlib.h" />
+    <ClInclude Include="..\..\Sources\bstring\bstrwrap.h" />
     <ClInclude Include="..\..\Sources\CustomFunctions.h" />
     <ClInclude Include="..\..\Sources\FMPlugin.h" />
     <ClInclude Include="..\..\Sources\FMPluginVersion.h" />
@@ -140,6 +144,10 @@
     <ClInclude Include="CustomFunctions.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\Sources\bstring\bsafe.c" />
+    <ClCompile Include="..\..\Sources\bstring\bstraux.c" />
+    <ClCompile Include="..\..\Sources\bstring\bstrlib.c" />
+    <ClCompile Include="..\..\Sources\bstring\bstrwrap.cpp" />
     <ClCompile Include="..\..\Sources\CustomFunctions.cpp" />
     <ClCompile Include="..\..\Sources\FMPluginHandlers.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(FileName)1.obj</ObjectFileName>

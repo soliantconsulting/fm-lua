@@ -1,11 +1,12 @@
 #include <vector>
-
+#include "bstring/bstrlib.h"
+#include "bstring/bstrwrap.h"
 #pragma once
 
 struct CustomFunc
 {
 	char* luacode;
-	std::vector<const char *> paramaters;
+	CBStringList paramaters;
 };
 
 struct CustomFunctions

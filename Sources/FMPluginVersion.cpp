@@ -45,6 +45,8 @@
 #include <string>
 #include <vector>
 #include <stdio.h>
+#include "bstring/bstrlib.h"
+#include "bstring/bstrwrap.h"
 
 extern "C"
 {
@@ -355,63 +357,23 @@ FMX_PROC(fmx::errcode) Custom_Lua_Function(short funcId, const fmx::ExprEnv& env
     return err;
 }
 
-//http://www.zedwood.com/article/105/cpp-strreplace-function
-string& str_replace(const string &search, const string &replace, string &subject)
-{
-    string buffer;
-   
-    int sealeng = search.length();
-    int strleng = subject.length();
-
-    if (sealeng==0)
-        return subject;//no change
-
-    for(int i=0, j=0; i<strleng; j=0 )
-    {
-        while (i+j<strleng && j<sealeng && subject[i+j]==search[j])
-            j++;
-        if (j==sealeng)//found 'search'
-        {
-            buffer.append(replace);
-            i+=sealeng;
-        }
-        else
-        {
-            buffer.append( &subject[i++], 1);
-        }
-    }
-    subject = buffer;
-    return subject;
-}
-
-vector<const char*> StringExplode(string str, string separator){
-	vector<const char*> *results = new vector<const char*>();
-    int found;
-
+CBStringList StringExplode(Bstrlib::CBString str, string separator){
 	//remove a lot of junk charecters so we can just explode on ,
 	//if the user sends some funky charecters it might break stuff but that's the users fault
-	str = str_replace("{","", str);
-	str = str_replace("}","", str);
-	str = str_replace(" ","", str);
-	str = str_replace(".","", str);
-	str = str_replace("\\","", str);
-	str = str_replace("/","", str);
-	str = str_replace(")","", str);
-	str = str_replace("(","", str);
-	str = str_replace("&","", str);
+	Bstrlib::CBString emtpy = ""; 
+	str.findreplace("{",emtpy);
+	str.findreplace("}",emtpy);
+	str.findreplace("(",emtpy);
+	str.findreplace(")",emtpy);
+	str.findreplace(".",emtpy);
+	str.findreplace(" ",emtpy);
+	str.findreplace("\\",emtpy);
+	str.findreplace("/",emtpy);
+	str.findreplace("&",emtpy);
 
-    found = str.find_first_of(separator);
-    while(found != string::npos) {
-        if(found > 0) {
-            results->push_back(str.substr(0,found).c_str());
-        }
-        str = str.substr(found+1);
-        found = str.find_first_of(separator);
-    }
-    if(str.length() > 0) {
-        results->push_back(str.c_str());
-    }
-	return *results;
+	CBStringList params;
+	params.split(str, ",");
+	return params;
 }
 
 //Execute_Lua
@@ -428,37 +390,40 @@ FMX_PROC(fmx::errcode) Register_Lua_Function(short funcId, const fmx::ExprEnv& e
         //We have at least one parameter. Read it and return correct information.
         
         fmx::TextAutoPtr funcName;
-		fmx::TextAutoPtr funcParams;
 		funcName->SetText(dataVect.AtAsText(0));
-		funcParams->SetText(dataVect.AtAsText(0));
-		fmx::TextAutoPtr parenthese;
-		parenthese->Assign("(");
-		funcName->DeleteText(funcName->Find(*parenthese,0));
 
-		//this should be after the (
-		funcParams->DeleteText(0,funcName->Find(*parenthese,0));
 		char *paramChar;
-		paramChar = new char[funcParams->GetSize()+1];
-		funcParams->GetBytes( paramChar, funcParams->GetSize()+1, 0, funcParams->GetSize()+1, fmx::Text::kEncoding_UTF8 );
+		paramChar = new char[funcName->GetSize()+1];
+		funcName->GetBytes( paramChar, funcName->GetSize()+1, 0, funcName->GetSize()+1, fmx::Text::kEncoding_ASCII_Windows );
+
+		Bstrlib::CBString paramters = paramChar;
+		int parPos = paramters.find('(');
+		paramters.remove(0,parPos+1);
 
 		const fmx::Text& luacode = dataVect.AtAsText(1);
         
+
+		//grab the lua code!
 		const long paramLen = luacode.GetSize() + 1;
-		//unsigned long intParamSize = *parameter1->GetSize(); 
 		char *luacodeChar;
 		luacodeChar = new char[paramLen];
 		luacode.GetBytes( luacodeChar, paramLen, 0, paramLen, fmx::Text::kEncoding_UTF8 );
 
 		CustomFunc func;
 		func.luacode = luacodeChar;
-		func.paramaters = StringExplode(paramChar, ",");
+		func.paramaters = StringExplode(paramters, ",");
+
+		fmx::TextAutoPtr parenthese;
+        parenthese->Assign("(");
+        funcName->DeleteText(funcName->Find(*parenthese,0));
 
 		CustomFunctions::functions.push_back(func);
 
 		fmx::QuadCharAutoPtr    pluginID(PLUGIN_ID_STRING[0], PLUGIN_ID_STRING[1], PLUGIN_ID_STRING[2], PLUGIN_ID_STRING[3]);
 		err = fmx::ExprEnv::RegisterExternalFunction ( *pluginID, CustomFunctions::functions.size() + CustomFunctions::indexOffSet - 1,
 			*funcName, dataVect.AtAsText(0), 0, 5, fmx::ExprEnv::kMayEvaluateOnServer | fmx::ExprEnv::kDisplayInAllDialogs, Custom_Lua_Function );
-		
+
+		resultText->Assign(paramters);
 		//err = result.SetAsText( *resultText, dataVect.At(0).GetLocale() );
 		fmx::FixPtAutoPtr fmNumber; 
 		//fmNumber->AssignInt(err); 

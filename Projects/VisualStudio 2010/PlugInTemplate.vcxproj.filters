@@ -27,6 +27,9 @@
     <Filter Include="Support\VisualStudio">
       <UniqueIdentifier>{3f064b79-8817-4abc-9267-c07d2f863337}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Sources\bstring">
+      <UniqueIdentifier>{2d10e1c1-59fc-404e-bd0a-20de4a1a7190}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\Sources\FMPlugin.h">
@@ -80,6 +83,18 @@
     <ClInclude Include="..\..\Sources\CustomFunctions.h">
       <Filter>Sources</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Sources\bstring\bsafe.h">
+      <Filter>Sources\bstring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\bstring\bstraux.h">
+      <Filter>Sources\bstring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\bstring\bstrlib.h">
+      <Filter>Sources\bstring</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Sources\bstring\bstrwrap.h">
+      <Filter>Sources\bstring</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Sources\FMPluginHandlers.cpp">
@@ -99,6 +114,18 @@
     </ClCompile>
     <ClCompile Include="..\..\Sources\CustomFunctions.cpp">
       <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\bstring\bsafe.c">
+      <Filter>Sources\bstring</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\bstring\bstraux.c">
+      <Filter>Sources\bstring</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\bstring\bstrlib.c">
+      <Filter>Sources\bstring</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Sources\bstring\bstrwrap.cpp">
+      <Filter>Sources\bstring</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
