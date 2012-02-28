@@ -7,20 +7,29 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "fm-lua", "PlugInTemplate.vc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lualib", "lualib.vcxproj", "{1278ECBB-0F4C-45C9-81DF-BEA477690993}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lua", "lua.vcxproj", "{5D172BD7-6A76-41A9-BFCC-86840F16F718}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1278ECBB-0F4C-45C9-81DF-BEA477690993} = {1278ECBB-0F4C-45C9-81DF-BEA477690993}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{4182C2DB-FD86-4886-BC73-DA9CA303B509}.Debug|Win32.ActiveCfg = Release|Win32
-		{4182C2DB-FD86-4886-BC73-DA9CA303B509}.Debug|Win32.Build.0 = Release|Win32
+		{4182C2DB-FD86-4886-BC73-DA9CA303B509}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4182C2DB-FD86-4886-BC73-DA9CA303B509}.Debug|Win32.Build.0 = Debug|Win32
 		{4182C2DB-FD86-4886-BC73-DA9CA303B509}.Release|Win32.ActiveCfg = Release|Win32
 		{4182C2DB-FD86-4886-BC73-DA9CA303B509}.Release|Win32.Build.0 = Release|Win32
 		{1278ECBB-0F4C-45C9-81DF-BEA477690993}.Debug|Win32.ActiveCfg = Debug|Win32
 		{1278ECBB-0F4C-45C9-81DF-BEA477690993}.Debug|Win32.Build.0 = Debug|Win32
 		{1278ECBB-0F4C-45C9-81DF-BEA477690993}.Release|Win32.ActiveCfg = Release|Win32
 		{1278ECBB-0F4C-45C9-81DF-BEA477690993}.Release|Win32.Build.0 = Release|Win32
+		{5D172BD7-6A76-41A9-BFCC-86840F16F718}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5D172BD7-6A76-41A9-BFCC-86840F16F718}.Debug|Win32.Build.0 = Debug|Win32
+		{5D172BD7-6A76-41A9-BFCC-86840F16F718}.Release|Win32.ActiveCfg = Release|Win32
+		{5D172BD7-6A76-41A9-BFCC-86840F16F718}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
